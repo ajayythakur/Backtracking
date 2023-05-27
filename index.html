@@ -386,13 +386,11 @@
 <p>In industry, actual programs often have multiple flags to control different aspects of debugging. Don't worry too much about making your code larger; modern compilers will notice that since the variable dibugging is final , and the controlled code will be discarded.</p>
 <p><b>Trick #4: Create an Exception.</b> If an Exception is thrown, you can get information about just where it happened by sending it the message printStackTrace(PrintStream). Since an Exception is an object like any other, you can create and throw your own Exceptions. However, Java programmers don't always realize that you can create an Exception without throwing it. For example, the following code <font color="#660000" size="4">printStackTrace(PrintStream)</font>. Since an Exception is an object like any other, you can create and throw your own Exceptions. However, Java programmers don't always realize that you can create an Exception without throwing it. For example, the following code
 </p>
-<font color="#660000" size="4">
-<pre>
+<pre style="color:#660000 ;">
     new Exception("Checkpoint Charlie").printStackTrace(System.out);
 </pre>
 <p>will print out a message something like this, and the program will then continue normally. That is, the above code just acts like a print statement.</p>
-<font color="#660000" size="4">
-<pre>
+<pre style="color:#660000 ;">
     java.lang.Exception: Checkpoint Charlie
         at TreeSearch.solvable(TreeSearch.java:53)
         at TreeSearch.solvable(TreeSearch.java:57)
@@ -400,7 +398,7 @@
         at __SHELL38.run(__SHELL38.java:16)
         at bluej.runtime.ExecServer.suspendExecution(Unknown Source)
 </pre>
-</font>
+<!-- </font> -->
 <h3>Example: Cindy's Puzzle</h3>
 I call the following puzzle "Cindy's puzzle" for historical reasons. You have some number n of black marbles and the same number of white marbles, and you have a playing board which consists simply of a line of
 <font color="#660000" size="4"> 2n+1 </font>spaces to put the marbles in. Start with the black marbles all at one end (say, the left), the white marbles all at the other end, and a free space in between.
@@ -560,34 +558,36 @@ spaces of the board. For each space, either zero or one moves is possible. With 
                 }
                 return false;
             }
-    
+        </font>
         </pre>
-        <p>
-            Along with canMove and makeMove, we are using methods puzzleSolved And printBoard with meanings that should be obvious.
-        </p>
-        <p>Along with <font color="#660000" size="4">canMove</font> and
-            <font color="#660000" size="4">makeMove</font>, we are using methods
-            <font color="#660000" size="4">puzzleSolved</font> And
-            <font color="#660000" size="4"> printBoard </font> with meanings that should be obvious.</p>
-    </font>
+        
+        <p>Along with <span style="color:#660000 ;" size="4">canMove</span> and
+            <span color="#660000" size="4">makeMove</span>, we are using methods
+            <span style="color:#660000 ;" size="4">puzzleSolved</span> And
+            <span style="color:#660000 ;" size="4"> printBoard </span> with meanings that should be obvious.</p>
+   
 <pre>
-<i>16.</i> <b>WHITE  WHITE  WHITE  _____  BLACK  BLACK  BLACK</b> 
-<i>15.</i> <b>WHITE  WHITE  WHITE  BLACK  _____  BLACK  BLACK</b> 
-<i>14.</i> <b>WHITE  WHITE  _____  BLACK  WHITE  BLACK  BLACK</b> 
-<i>13.</i> <b>WHITE  _____  WHITE  BLACK  WHITE  BLACK  BLACK</b> 
-<i>12</i>  <b>WHITE  BLACK  WHITE  _____  WHITE  BLACK  BLACK</b> 
-<i>11.</i> <b>WHITE  BLACK  WHITE  BLACK  WHITE  _____  BLACK</b> 
-<i>10.</i><b>WHITE  BLACK  WHITE  BLACK  WHITE  BLACK  _____</b> 
-<i>9.</i>  <b>WHITE  BLACK  WHITE  BLACK  _____  BLACK  WHITE</b> 
-<i>8.</i>  <b>WHITE  BLACK  _____  BLACK  WHITE  BLACK  WHITE</b> 
-<i>7.  _____</i> <b>BLACK  WHITE  BLACK  WHITE  BLACK  WHITE</b> 
-<i>6.</i> <b> BLACK  _____  WHITE  BLACK  WHITE  BLACK  WHITE</b> 
-<i>5.</i> <b> BLACK  BLACK  WHITE  _____  WHITE  BLACK  WHITE</b> 
-<i>4.</i> <b> BLACK  BLACK  WHITE  BLACK  WHITE  _____  WHITE</b> 
-<i>3.</i> <b> BLACK  BLACK  WHITE  BLACK  _____  WHITE  WHITE</b>
-<i>2.</i> <b> BLACK  BLACK  _____  BLACK  WHITE  WHITE  WHITE</b>
-<i>1.</i> <b> BLACK  BLACK  BLACK  _____  WHITE  WHITE  WHITE</b> 
+<ol reversed style="font-style: italic; color: blue;">
+
+<li><text style="font-style: normal;font-weight: bold; color: black;"> WHITE  WHITE  WHITE  _____  BLACK  BLACK  BLACK</text>
+<li><text style="font-style: normal;font-weight: bold; color: black;"> WHITE  WHITE  WHITE  BLACK  _____  BLACK  BLACK</text>
+<li><text style="font-style: normal;font-weight: bold; color: black;"> WHITE  WHITE  _____  BLACK  WHITE  BLACK  BLACK</text> 
+<li><text style="font-style: normal;font-weight: bold; color: black;"> WHITE  _____  WHITE  BLACK  WHITE  BLACK  BLACK</text> 
+<li><text style="font-style: normal;font-weight: bold; color: black;"> WHITE  BLACK  WHITE  _____  WHITE  BLACK  BLACK</text> 
+<li><text style="font-style: normal;font-weight: bold; color: black;"> WHITE  BLACK  WHITE  BLACK  WHITE  _____  BLACK</text> 
+<li><text style="font-style: normal;font-weight: bold; color: black;">WHITE  BLACK  WHITE  BLACK  WHITE  BLACK  _____</text> 
+<li><text style="font-style: normal;font-weight: bold; color: black;">WHITE  BLACK  WHITE  BLACK  _____  BLACK  WHITE</text> 
+<li><text style="font-style: normal;font-weight: bold; color: black;">WHITE  BLACK  _____  BLACK  WHITE  BLACK  WHITE</text> 
+<li><text style="font-style: normal;font-weight: bold; color: black;">_____  BLACK  WHITE  BLACK  WHITE  BLACK  WHITE</text> 
+<li><text style="font-style: normal;font-weight: bold; color: black;">BLACK  _____  WHITE  BLACK  WHITE  BLACK  WHITE</text> 
+<li><text style="font-style: normal;font-weight: bold; color: black;">BLACK  BLACK  WHITE  _____  WHITE  BLACK  WHITE</text> 
+<li><text style="font-style: normal;font-weight: bold; color: black;">BLACK  BLACK  WHITE  BLACK  WHITE  _____  WHITE</text> 
+<li><text style="font-style: normal;font-weight: bold; color: black;">BLACK  BLACK  WHITE  BLACK  _____  WHITE  WHITE</text>
+<li><text style="font-style: normal;font-weight: bold; color: black;">BLACK  BLACK  _____  BLACK  WHITE  WHITE  WHITE</text>
+<li><text style="font-style: normal;font-weight: bold; color: black;">BLACK  BLACK  BLACK  _____  WHITE  WHITE  WHITE</text> 
+</ol>
 </pre>
+
 <p>Notice that the solution is given in reverse order: BLACK starts out on the left and WHITE on the right, as in the last line. I've added line numbers to the actual output in order to emphasize this point. Backtracking always produces its results (sequence of choices) in reverse order; it is up to you, the programmer, to reverse the results again to get them in the correct order.</p>
 
 
